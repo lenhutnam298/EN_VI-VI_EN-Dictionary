@@ -76,7 +76,8 @@ public class MainFrame extends JFrame{
             searchWord.jButtonSearch.addActionListener(e1 -> {
                 // Do something
                 if (searchWord.jTextFieldWord.getText().length() > 0){
-                    searchWord.wordMeaning = dictionary.get(searchWord.jTextFieldWord.getText());
+                    String string = searchWord.jTextFieldWord.getText().toLowerCase();
+                    searchWord.wordMeaning = dictionary.get(string);
                     if (searchWord.wordMeaning == null){
                         JOptionPane.showMessageDialog( searchWord, "Word  Not Found. Please try again!","Search Word", JOptionPane.INFORMATION_MESSAGE);
                     }
@@ -101,8 +102,8 @@ public class MainFrame extends JFrame{
             // Do something
             AddWord addWord = new AddWord();
             addWord.jButtonAddWord.addActionListener(e1 -> {
-                String word = addWord.jTextFieldWord.getText();
-                String meaning = addWord.jTextAreaMeaning.getText();
+                String word = addWord.jTextFieldWord.getText().toLowerCase();
+                String meaning = addWord.jTextAreaMeaning.getText().toLowerCase();
                 addWord.jTextFieldWord.setText("");
                 addWord.jTextAreaMeaning.setText("");
                 addWord.jTextFieldWord.requestFocus();
@@ -138,7 +139,7 @@ public class MainFrame extends JFrame{
             // Do something
             RemoveWord removeWord = new RemoveWord();
             removeWord.jButtonRemove.addActionListener(e1 -> {
-                String word = removeWord.jTextFieldWord.getText();
+                String word = removeWord.jTextFieldWord.getText().toLowerCase();
                 removeWord.jTextFieldWord.setText("");
                 removeWord.jTextFieldWord.requestFocus();
                 String fileName;
@@ -293,7 +294,7 @@ public class MainFrame extends JFrame{
             searchWord.jButtonSearch.addActionListener(e1 -> {
                 // Do something
                 if (searchWord.jTextFieldWord.getText().length() > 0){
-                    searchWord.wordMeaning = dictionary.get(searchWord.jTextFieldWord.getText());
+                    searchWord.wordMeaning = dictionary.get(searchWord.jTextFieldWord.getText().toLowerCase());
                     if (searchWord.wordMeaning == null){
                         JOptionPane.showMessageDialog( searchWord, "Word  Not Found. Please try again!","Search Word", JOptionPane.INFORMATION_MESSAGE);
                     }
@@ -319,8 +320,8 @@ public class MainFrame extends JFrame{
             // Do something
             AddWord addWord = new AddWord();
             addWord.jButtonAddWord.addActionListener(e1 -> {
-                String word = addWord.jTextFieldWord.getText();
-                String meaning = addWord.jTextAreaMeaning.getText();
+                String word = addWord.jTextFieldWord.getText().toLowerCase();
+                String meaning = addWord.jTextAreaMeaning.getText().toLowerCase();
                 addWord.jTextFieldWord.setText("");
                 addWord.jTextAreaMeaning.setText("");
                 addWord.jTextFieldWord.requestFocus();
@@ -756,6 +757,7 @@ public class MainFrame extends JFrame{
                 break;
         }
     }
+
 
     // Main function
     private static void createAndShowGUI() throws Exception{

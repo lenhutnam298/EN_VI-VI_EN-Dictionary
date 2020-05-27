@@ -27,6 +27,7 @@ public class SearchWord extends JFrame{
     public JButton jButtonSearch;
     public String wordMeaning;
 
+
     public SearchWord() {
         super("Search Word");
         setIconImage((new ImageIcon(getClass().getResource("/icons/icons8-search-48.png"))).getImage());
